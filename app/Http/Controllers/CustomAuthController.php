@@ -38,12 +38,23 @@ class CustomAuthController extends Controller
     public function customRegistration(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
+//            'name' => 'required',
+//            'email' => 'required|email|unique:users',
+//            'password' => 'required|min:6',
         ]);
 
         $data = $request->all();
+
+
+        $file = $request->file('fileToUpload');
+
+        $fileName = $file->getClientOriginalName();
+        //Move Uploaded File
+        $destinationPath = 'uploads';
+        $file->move($destinationPath,$file->getClientOriginalName());
+
+        $data['image'] = $fileName;
+
         $check = $this->create($data);
 
         return redirect("dashboard")->withSuccess('You have signed-in');
@@ -53,6 +64,8 @@ class CustomAuthController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'phone' => $data['phone'],
+            'image' => $data['image'],
             'email' => $data['email'],
             'password' => Hash::make($data['password'])
         ]);
