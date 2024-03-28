@@ -83,6 +83,17 @@ class CrudUserController extends Controller
         return redirect("list")->withSuccess('You have signed-in');
     }
 
+    /**
+     * Update page
+     */
+    public function updateUser(Request $request)
+    {
+        $user_id = $request->get('id');
+        $user = User::find($user_id);
+
+        return view('auth.update', ['user' => $user]);
+    }
+
     /** List of users */
     public function listUser()
     {
