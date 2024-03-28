@@ -61,4 +61,4 @@
     </main>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\1-github-workspace\1-tailieuweb\21-training-laravel\training-laravel\resources\views/auth/registration.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\1-github-workspace\1-tailieuweb\21-training-laravel\training-laravel\resources\views/crud_user/registration.blade.php ENDPATH**/ ?>

@@ -19,7 +19,7 @@ class CrudUserController extends Controller
      */
     public function login()
     {
-        return view('auth.login');
+        return view('crud_user.login');
     }
 
     /**
@@ -46,7 +46,7 @@ class CrudUserController extends Controller
      */
     public function createUser()
     {
-        return view('auth.create');
+        return view('crud_user.create');
     }
 
     /**
@@ -77,7 +77,7 @@ class CrudUserController extends Controller
         $user_id = $request->get('id');
         $user = User::find($user_id);
 
-        return view('auth.read', ['user' => $user]);
+        return view('crud_user.read', ['user' => $user]);
     }
 
     /**
@@ -98,7 +98,7 @@ class CrudUserController extends Controller
         $user_id = $request->get('id');
         $user = User::find($user_id);
 
-        return view('auth.update', ['user' => $user]);
+        return view('crud_user.update', ['user' => $user]);
     }
 
     /**
@@ -130,7 +130,7 @@ class CrudUserController extends Controller
     {
         if(Auth::check()){
             $users = User::all();
-            return view('auth.list', ['users' => $users]);
+            return view('crud_user.list', ['users' => $users]);
         }
 
         return redirect("login")->withSuccess('You are not allowed to access');
