@@ -8,15 +8,22 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * CRUD User controller
+ */
 class CrudUserController extends Controller
 {
 
-    public function index()
+    /**
+     * Login page
+     */
+    public function login()
     {
         return view('auth.login');
     }
 
-    public function customLogin(Request $request)
+    /** User submit form login */
+    public function authUser(Request $request)
     {
         $request->validate([
             'email' => 'required',
@@ -25,19 +32,25 @@ class CrudUserController extends Controller
 
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard')
+            return redirect()->intended('list')
                 ->withSuccess('Signed in');
         }
 
         return redirect("login")->withSuccess('Login details are not valid');
     }
 
-    public function registration()
+    /**
+     * Registration page
+     */
+    public function createUser()
     {
-        return view('auth.registration');
+        return view('auth.create');
     }
 
-    public function customRegistration(Request $request)
+    /**
+     * User submit form register
+     */
+    public function postUser(Request $request)
     {
         $request->validate([
             'name' => 'required',
@@ -46,24 +59,25 @@ class CrudUserController extends Controller
         ]);
 
         $data = $request->all();
-        $check = $this->create($data);
-
-        return redirect("dashboard")->withSuccess('You have signed-in');
-    }
-
-    public function create(array $data)
-    {
-        return User::create([
+        $check = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password'])
         ]);
+
+        return redirect("list")->withSuccess('You have signed-in');
     }
 
-    public function dashboard()
+    public function readUser(Request $request) {
+        return view('auth.read');
+    }
+
+    /** List of users */
+    public function listUser()
     {
         if(Auth::check()){
-            return view('dashboard');
+            $users = User::all();
+            return view('auth.list', ['users' => $users]);
         }
 
         return redirect("login")->withSuccess('You are not allowed to access');

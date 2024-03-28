@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\CrudUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +14,17 @@ use App\Http\Controllers\CustomAuthController;
 |
 */
 
-Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
-Route::get('login', [CustomAuthController::class, 'index'])->name('login');
-Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom');
-Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user');
-Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom');
-Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
+Route::get('dashboard', [CrudUserController::class, 'dashboard']);
+Route::get('login', [CrudUserController::class, 'login'])->name('login');
+Route::post('login', [CrudUserController::class, 'authUser'])->name('user.authUser');
+Route::get('create', [CrudUserController::class, 'createUser'])->name('user.createUser');
+Route::post('create', [CrudUserController::class, 'postUser'])->name('user.postUser');
+Route::post('read', [CrudUserController::class, 'readUser']);
+Route::post('delete', [CrudUserController::class, 'deleteUser']);
+Route::post('update', [CrudUserController::class, 'updateUser']);
+Route::post('update', [CrudUserController::class, 'postUpdateUser']);
+Route::get('list', [CrudUserController::class, 'listUser'])->name('user.list');
+Route::get('signout', [CrudUserController::class, 'signOut'])->name('signout');
 
 Route::get('/', function () {
     return view('welcome');
