@@ -14,9 +14,9 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>{{$user->id}}</td>
-                            <td>{{$user->name}}</td>
-                            <td>{{$user->email}}</td>
+                            <td>{{$messi->id}}</td>
+                            <td>{{$messi->name}}</td>
+                            <td>{{$messi->email}}</td>
                         </tr>
                     </tbody>
                 </table>
