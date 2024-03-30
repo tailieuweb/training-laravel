@@ -7,7 +7,6 @@
     <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
 </head>
 <body>
-@yield('content')
 <nav class="navbar navbar-light navbar-expand-lg mb-5" style="background-color: #e3f2fd;">
     <div class="container">
         <a class="navbar-brand mr-auto" href="#">Laravel Training</a>
@@ -33,6 +32,6 @@
         </div>
     </div>
 </nav>
-
+@yield('content')
 </body>
 </html>
