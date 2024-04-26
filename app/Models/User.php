@@ -4,11 +4,14 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
+
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -24,7 +27,7 @@ class User extends Authenticatable
         'phone',
         'mssv',
         'avatar',
-        
+
     ];
 
     /**
@@ -45,4 +48,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    /**
+     * Relationship
+     * @return HasMany
+     */
+    public function posts(): HasMany
+    {
+        return $this->hasMany(Posts::class);
+    }
 }

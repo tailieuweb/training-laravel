@@ -63,7 +63,7 @@ class CrudUserController extends Controller
             'phone' => 'required|min:10',
             'mssv' => 'required',
             'avatar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-           
+
         ]);
          //Kiem tra tep tin co truong du lieu avatar hay kh
          if($request->hasFile('avatar')){
@@ -75,7 +75,7 @@ class CrudUserController extends Controller
 
         //Lay tat ca co so du lieu gan vao mang data
         $data = $request->all();
-        
+
         $check = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -97,7 +97,7 @@ class CrudUserController extends Controller
         $user_id = $request->get('id');
         $user = User::find($user_id);
 
-        return view('crud_user.read', ['messi' => $user]);
+        return view('crud_user.read', ['user' => $user]);
     }
 
     /**
@@ -136,10 +136,10 @@ class CrudUserController extends Controller
             'phone' => 'required|min:10',
             //'mssv' => 'required',
             'mssv' =>'required|unique:users',
-            
+
             'avatar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-       
+
 
 
        $user = User::find($input['id']);
@@ -150,14 +150,14 @@ class CrudUserController extends Controller
        $user->mssv = $input['mssv'];
           //Kiem tra tep tin co truong du lieu avatar hay kh
           if($request->hasFile('avatar')){
-           
+
             //co file dinh kem trong form update thi tim file cu va xoa di
             //Neu $anhcu ton tai thi xoa no di , neu kh co thi kh xoa
             $anhcu = 'avatar/' . $user->avatar;
             if(File::exists($anhcu)){
                 File::delete($anhcu);
             }
-           
+
             $file = $request->file('avatar');
             $extension = $file->getClientOriginalExtension();//Lay ten mo rong .jpg, .png...
             $filename = time().'.'.$extension;//
