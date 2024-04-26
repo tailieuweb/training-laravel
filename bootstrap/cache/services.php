@@ -1,5 +1,5 @@
 <?php return array (
-  'providers' =>
+  'providers' => 
   array (
     0 => 'Illuminate\\Auth\\AuthServiceProvider',
     1 => 'Illuminate\\Broadcasting\\BroadcastServiceProvider',
@@ -15,10 +15,10 @@
     11 => 'Illuminate\\Mail\\MailServiceProvider',
     12 => 'Illuminate\\Notifications\\NotificationServiceProvider',
     13 => 'Illuminate\\Pagination\\PaginationServiceProvider',
-    14 => 'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider',
-    15 => 'Illuminate\\Pipeline\\PipelineServiceProvider',
-    16 => 'Illuminate\\Queue\\QueueServiceProvider',
-    17 => 'Illuminate\\Redis\\RedisServiceProvider',
+    14 => 'Illuminate\\Pipeline\\PipelineServiceProvider',
+    15 => 'Illuminate\\Queue\\QueueServiceProvider',
+    16 => 'Illuminate\\Redis\\RedisServiceProvider',
+    17 => 'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider',
     18 => 'Illuminate\\Session\\SessionServiceProvider',
     19 => 'Illuminate\\Translation\\TranslationServiceProvider',
     20 => 'Illuminate\\Validation\\ValidationServiceProvider',
@@ -35,7 +35,7 @@
     31 => 'App\\Providers\\EventServiceProvider',
     32 => 'App\\Providers\\RouteServiceProvider',
   ),
-  'eager' =>
+  'eager' => 
   array (
     0 => 'Illuminate\\Auth\\AuthServiceProvider',
     1 => 'Illuminate\\Cookie\\CookieServiceProvider',
@@ -57,7 +57,7 @@
     17 => 'App\\Providers\\EventServiceProvider',
     18 => 'App\\Providers\\RouteServiceProvider',
   ),
-  'deferred' =>
+  'deferred' => 
   array (
     'Illuminate\\Broadcasting\\BroadcastManager' => 'Illuminate\\Broadcasting\\BroadcastServiceProvider',
     'Illuminate\\Contracts\\Broadcasting\\Factory' => 'Illuminate\\Broadcasting\\BroadcastServiceProvider',
@@ -182,8 +182,6 @@
     'mail.manager' => 'Illuminate\\Mail\\MailServiceProvider',
     'mailer' => 'Illuminate\\Mail\\MailServiceProvider',
     'Illuminate\\Mail\\Markdown' => 'Illuminate\\Mail\\MailServiceProvider',
-    'crud_user.password' => 'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider',
-    'crud_user.password.broker' => 'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider',
     'Illuminate\\Contracts\\Pipeline\\Hub' => 'Illuminate\\Pipeline\\PipelineServiceProvider',
     'pipeline' => 'Illuminate\\Pipeline\\PipelineServiceProvider',
     'queue' => 'Illuminate\\Queue\\QueueServiceProvider',
@@ -193,6 +191,8 @@
     'queue.worker' => 'Illuminate\\Queue\\QueueServiceProvider',
     'redis' => 'Illuminate\\Redis\\RedisServiceProvider',
     'redis.connection' => 'Illuminate\\Redis\\RedisServiceProvider',
+    'auth.password' => 'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider',
+    'auth.password.broker' => 'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider',
     'translator' => 'Illuminate\\Translation\\TranslationServiceProvider',
     'translation.loader' => 'Illuminate\\Translation\\TranslationServiceProvider',
     'validator' => 'Illuminate\\Validation\\ValidationServiceProvider',
@@ -202,48 +202,48 @@
     'Laravel\\Sail\\Console\\PublishCommand' => 'Laravel\\Sail\\SailServiceProvider',
     'command.tinker' => 'Laravel\\Tinker\\TinkerServiceProvider',
   ),
-  'when' =>
+  'when' => 
   array (
-    'Illuminate\\Broadcasting\\BroadcastServiceProvider' =>
+    'Illuminate\\Broadcasting\\BroadcastServiceProvider' => 
     array (
     ),
-    'Illuminate\\Bus\\BusServiceProvider' =>
+    'Illuminate\\Bus\\BusServiceProvider' => 
     array (
     ),
-    'Illuminate\\Cache\\CacheServiceProvider' =>
+    'Illuminate\\Cache\\CacheServiceProvider' => 
     array (
     ),
-    'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider' =>
+    'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider' => 
     array (
     ),
-    'Illuminate\\Hashing\\HashServiceProvider' =>
+    'Illuminate\\Hashing\\HashServiceProvider' => 
     array (
     ),
-    'Illuminate\\Mail\\MailServiceProvider' =>
+    'Illuminate\\Mail\\MailServiceProvider' => 
     array (
     ),
-    'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider' =>
+    'Illuminate\\Pipeline\\PipelineServiceProvider' => 
     array (
     ),
-    'Illuminate\\Pipeline\\PipelineServiceProvider' =>
+    'Illuminate\\Queue\\QueueServiceProvider' => 
     array (
     ),
-    'Illuminate\\Queue\\QueueServiceProvider' =>
+    'Illuminate\\Redis\\RedisServiceProvider' => 
     array (
     ),
-    'Illuminate\\Redis\\RedisServiceProvider' =>
+    'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider' => 
     array (
     ),
-    'Illuminate\\Translation\\TranslationServiceProvider' =>
+    'Illuminate\\Translation\\TranslationServiceProvider' => 
     array (
     ),
-    'Illuminate\\Validation\\ValidationServiceProvider' =>
+    'Illuminate\\Validation\\ValidationServiceProvider' => 
     array (
     ),
-    'Laravel\\Sail\\SailServiceProvider' =>
+    'Laravel\\Sail\\SailServiceProvider' => 
     array (
     ),
-    'Laravel\\Tinker\\TinkerServiceProvider' =>
+    'Laravel\\Tinker\\TinkerServiceProvider' => 
     array (
     ),
   ),
