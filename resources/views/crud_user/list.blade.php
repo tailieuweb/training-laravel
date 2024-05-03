@@ -36,11 +36,14 @@
     <main class="login-form">
         <div class="container">
             <div class="row justify-content-center">
+
                 @if (Session::has('success'))
                     <div class="alert alert-success">
                         <i class="fas fa-check-circle"></i> {{ Session::get('success') }}
                     </div>
                 @endif
+
+
                 <table>
                     <thead>
                         <tr>

@@ -67,8 +67,10 @@
 <div class="container">
     <div class="row">
         <h4>Profile (1-1)</h4>
-        First name : {{$user->profile->first_name}} <br>
-        Last name : {{$user->profile->last_name}} <br>
+        @if(!empty($user->profile))
+            First name : {{$user->profile->first_name}} <br>
+            Last name : {{$user->profile->last_name}} <br>
+        @endif
     </div>
 
     <div class="row">

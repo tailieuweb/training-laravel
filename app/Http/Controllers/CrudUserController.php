@@ -120,9 +120,11 @@ class CrudUserController extends Controller
 
         if ($isDelete) {
             $user = User::destroy($user_id);
+            return redirect("list")->withSuccess('Delete successful');
+        } else {
+            return redirect("list")->withSuccess('Delete not ok');
         }
 
-        return redirect("list")->withSuccess('Delete successful');
     }
 
     /**

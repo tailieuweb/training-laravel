@@ -15,6 +15,11 @@ class Posts extends Model
 
     public $incrementing = true;
 
+    protected $fillable = [
+        'post_name',
+        'post_description',
+    ];
+
     /**
      * Relationship
      * @return BelongsTo
