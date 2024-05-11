@@ -18,10 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(RegisterController::class)->group(function(){
     Route::post('register', 'register');
-    Route::post('login', 'login');
+    Route::post('login', 'login')->middleware('for-testing');
 });
 
-Route::middleware('auth:sanctum')->group( function () {
+Route::middleware(['auth:sanctum', 'for-testing'])->group( function () {
     Route::resource('products', ProductController::class);
 });
 
