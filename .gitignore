@@ -16,3 +16,9 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+
+.env
+Ronaldo.txt
+Messi.txt
+Neymar.txt 
+
