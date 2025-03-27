@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Laravel 10.48.0 - CRUD User Example</title>
+    <title>Laravel 11.44.2 - CRUD User Example</title>
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
@@ -9,7 +9,7 @@
 <body>
 <nav class="navbar navbar-light navbar-expand-lg mb-5" style="background-color: #e3f2fd;">
     <div class="container">
-        <a class="navbar-brand mr-auto" href="#">Laravel Training</a>
+        <a class="navbar-brand mr-auto" href="#">Laravel Backend-Web 2</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
