@@ -11,7 +11,6 @@
                             <form action="{{ route('user.postUser') }}" method="POST">
                                 @csrf
 
-
                                 <div class="form-group mb-3">
                                     <input type="text" placeholder="Name" id="name" class="form-control" name="name"
                                            required autofocus>
@@ -19,23 +18,6 @@
                                         <span class="text-danger">{{ $errors->first('name') }}</span>
                                     @endif
                                 </div>
-
-                                <div class="form-group mb-3">
-                                    <input type="text" placeholder="Phone" id="name" class="form-control" name="phone"
-                                           required autofocus>
-                                    @if ($errors->has('phone'))
-                                        <span class="text-danger">{{ $errors->first('phone') }}</span>
-                                    @endif
-                                </div>
-
-                                <div class="form-group mb-3">
-                                    <input type="text" placeholder="Address" id="name" class="form-control" name="address"
-                                           required autofocus>
-                                    @if ($errors->has('address'))
-                                        <span class="text-danger">{{ $errors->first('address') }}</span>
-                                    @endif
-                                </div>
-
 
                                 <div class="form-group mb-3">
                                     <input type="text" placeholder="Email" id="email_address" class="form-control"

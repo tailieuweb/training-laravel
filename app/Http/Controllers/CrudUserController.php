@@ -64,8 +64,8 @@ class CrudUserController extends Controller
         $data = $request->all();
         $check = User::create([
             'name' => $data['name'],
-            'phone' => $data['phone'],
-            'address' => $data['address'],
+//            'phone' => $data['phone'],
+//            'address' => $data['address'],
             'email' => $data['email'],
             'password' => Hash::make($data['password'])
         ]);
@@ -131,11 +131,6 @@ class CrudUserController extends Controller
      */
     public function listUser()
     {
-//        $users = [
-//                'users' => User::all()
-//        ];
-//        return view('crud_user.ronaldo', $users);
-
         if(Auth::check()){
             $users = User::all();
             return view('crud_user.list', ['users' => $users]);
