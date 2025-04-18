@@ -22,7 +22,9 @@
                                 <th>{{ $user->email }}</th>
                                 <th>
                                     @foreach($user->roles as $role)
-                                        {{ $role->name . '-' }}
+                                        <a href="{{ route('user.role', ['id' => $role->id]) }}">
+                                            {{ $role->name . '-' }}
+                                        </a>
                                     @endforeach
                                 </th>
                                 <th>
