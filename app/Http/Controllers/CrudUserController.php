@@ -131,6 +131,7 @@ class CrudUserController extends Controller
      */
     public function listUser()
     {
+
         if(Auth::check()){
             $users = User::paginate(self::MAX_RECORDS);
 
