@@ -36,7 +36,14 @@
                         @endforeach
                     </tbody>
                 </table>
-                {!! $users->withQueryString()->links('pagination::bootstrap-5') !!}
+
+
+
+                {!! $users->links('') !!}
+
+
+
+
             </div>
         </div>
     </main>
